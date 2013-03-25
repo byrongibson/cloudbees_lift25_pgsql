@@ -15,7 +15,7 @@ and sophisticated web applications like [Novell Vibe][6] and [Innovation Games][
 
 ![Scala Logo][11]
 
-This ClickStart bootstraps you with a working barebones lift web application, a database 
+This ClickStart bootstraps you with a working barebones Lift web application, a database 
 ([PostgreSQL][21]), a source repository (populated, ready to go), and a [Jenkins build service][23] 
 running continuous deployment from the source repository (push a change, your project 
 will be built and deployed). 
