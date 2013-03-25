@@ -1,30 +1,38 @@
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/lift_template/master/clickstart.json"><img src="https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart-now.png"/></a>
+### Work In Progress, Not Working Yet
+
+<a href="https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_nodb/master/clickstart.json">
+<img src="https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart-now.png"/></a>
 
 # Scala 2.9 and Lift 2.5 ClickStart.
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/b/b7/Lift-logo.jpg"/>
+![Lift Logo][10]
 
-The [Lift Framework](http://www.liftweb.net/) is a popular web framework for the [Scala](http://scala-lang.org) Programming language. 
-It is known for being very secure out of the box (notably so for preventing XSS flaws), scalable, and mature. 
-It is handy for ajax/comet applications, and is "full stack" (ie comes with pretty much everything you need, including ORM). Lift is in use by some large public sites such as [Foursquare](http://www.foursquare.com). 
+The [Lift Framework][1] is a popular web framework for the [Scala][2] Programming language. 
+It is known for being [very secure out of the box][3], scalable, and mature.  It makes 
+ajax and comet [easy][4], and is "full stack" (ie comes with pretty much everything you 
+need, including ORM). Success stories include large public sites such as [Foursquare][5] 
+and sophisticated web applications like [Novell Vibe][6] and [Innovation Games][7].
 
-<img src="http://upload.wikimedia.org/wikipedia/en/8/85/Scala_logo.png"/>
+![Scala Logo][11]
 
+This ClickStart bootstraps you with a working barebones lift web application, a database 
+([PostgreSQL][21]), a source repository (populated, ready to go), and a [Jenkins build service][23] 
+running continuous deployment from the source repository (push a change, your project 
+will be built and deployed). 
 
-This ClickStart bootstraps you with a working lift web application, a database, a source repository 
-(populated, ready to go), a Jenkins build service running continuous deployment from the source repository
-(push a change, your project will be built and deployed). 
+This Clickstart uses the latest version of [Lift 2.5][16], currently Lift 2.5-RC2, 
+and will be updated as new versions are released.  It is based on CloudBees' 
+[default Lift 2.4 ClickStart][9] but configures a [PostgreSQL][21] instance instead
+of MySQL.  Please see the [MySQL][19] and [No DB][18] Lift 2.5 ClickStarts if you prefer 
+MySQL or just Lift's built-in [H2 DB][8], or [CloudBees' docs on how to make your own ClickStart][17] 
+if you prefer something else.
 
-This Clickstart uses the latest version of Lift 2.5, currently Lift 2.5-RC2.  It will be updated as new versions are released.
-It is based on CloudBees' [default Lift 2.4 ClickStart](https://github.com/CloudBees-community/lift_template).
+You can use this as a starting point for your own Lift application (remember the source 
+repository will be private to your account). 
 
-You can use this as a starting point for your own lift application 
-(remember the source repository will be private to your account). 
-
-Click here to launch this right now.
+[Click here][13] to launch this right now.
 
 Feel free to fork and make this your own - pull requests welcome !
-
 
 
 ## Manual steps for deploying on CloudBees:
@@ -52,7 +60,8 @@ Create a new maven project in Jenkins, changing the following:
 
 ## To build this locally:
 
-In the lift_template directory, open a command line, and invoke maven by typing "mvn package" to build the war file, then deploy it on cloudbees typing:
+In the lift_template directory, open a command line, and invoke maven by typing "mvn 
+package" to build the war file, then deploy it on cloudbees typing:
 	
     bees app:deploy -a MYAPP_ID target/*.war
 
@@ -71,3 +80,33 @@ And uncommenting the following:
     DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
 
 Then finally run with jetty type "sbt update ~jetty-run" in the project directory, and then browse to localhost:8080
+
+
+
+[1]:    http://www.liftweb.net/
+[2]:    http://scala-lang.org
+[3]:    http://seventhings.liftweb.net/security
+[4]:    http://seventhings.liftweb.net/comet
+[5]:    http://www.foursquare.com
+[6]:    http://vibe.novell.com/
+[7]:    http://innovationgames.com/
+[8]:    http://www.h2database.com
+[9]:    http://github.com/CloudBees-community/lift_template 
+[10]:   http://upload.wikimedia.org/wikipedia/commons/b/b7/Lift-logo.jpg "Lift Logo"
+[11]:   http://upload.wikimedia.org/wikipedia/en/8/85/Scala_logo.png "Scala Logo"
+[12]:   https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart-now.png "Launch ClickStart"
+[13]:   https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_nodb/master/clickstart.json
+[14]:   https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_mysql/master/clickstart.json
+[15]:   https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_pgsql/master/clickstart.json
+[16]:   https://github.com/lift/lift_25_sbt
+[17]:   https://developer.cloudbees.com/bin/view/RUN/How+to+make+your+own+Clickstart
+[18]:   https://github.com/byrongibson/cloudbees_lift25_nodb
+[19]:   https://github.com/byrongibson/cloudbees_lift25_mysql
+[20]:   https://github.com/byrongibson/cloudbees_lift25_pgsql
+[21]:   http://wiki.cloudbees.com/bin/view/DEV/PostgreSQL
+[22]:   http://wiki.cloudbees.com/bin/view/DEV/MySQL
+[23]:   http://wiki.cloudbees.com/bin/view/DEV/Getting+started+with+Jenkins
+
+[]:     https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_nodb/master/clickstart.json
+[]:     https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_mysql/master/clickstart.json
+[]:     https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_pgsql/master/clickstart.json
