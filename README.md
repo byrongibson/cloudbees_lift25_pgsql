@@ -1,4 +1,10 @@
 ### Work In Progress, Not Working Yet
+It is currently [not possible][24] to configure PostgreSQL via ClickStart.  If you 
+wish to use PostgreSQL, you can start with this ClickStart (identical to the [base
+Lift 2.5 NoDB ClickStart][18]), and add PostgreSQL separately via [these instructions][21].
+
+This ClickStart bootstraps a Lift instance, source repository, and Jenkins build service, 
+but no external DB (uses only Lift's [built-in H2 db][8]).  
 
 <a href="https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_nodb/master/clickstart.json">
 <img src="https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart-now.png"/></a>
@@ -106,7 +112,4 @@ Then finally run with jetty type "sbt update ~jetty-run" in the project director
 [21]:   http://wiki.cloudbees.com/bin/view/DEV/PostgreSQL
 [22]:   http://wiki.cloudbees.com/bin/view/DEV/MySQL
 [23]:   http://wiki.cloudbees.com/bin/view/DEV/Getting+started+with+Jenkins
-
-[]:     https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_nodb/master/clickstart.json
-[]:     https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_mysql/master/clickstart.json
-[]:     https://grandcentral.cloudbees.com/#CB_clickstart=https://raw.github.com/byrongibson/cloudbees_lift25_pgsql/master/clickstart.json
+[24]:   http://stackoverflow.com/questions/15604898/possible-to-make-a-clickstart-with-postgresql
